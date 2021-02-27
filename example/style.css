@@ -1,0 +1,13 @@
+.editor {
+    display: flex;
+    height: 100%;
+}
+
+.editor > div {
+    flex-basis: 50%;
+}
+
+.left textarea, .right {
+    width: 100%;
+    height: 100%;
+}
