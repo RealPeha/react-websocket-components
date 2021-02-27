@@ -3,7 +3,7 @@ import { importWSComponent } from '../lib'
 
 import './style.css'
 
-const Markdown = importWSComponent('Markdown') // import Markdown from './Markdown'
+const Markdown = importWSComponent('./Markdown') // import Markdown from './Markdown'
 
 const Editor = () => {
     const [text, setText] = useState('<b>Yes</b> **No** [Link](google.com)')

@@ -5,6 +5,7 @@ require('babel-register')({
 const WebSocket = require('ws')
 const express = require('express')
 const http = require('http')
+const { resolve } = require('path')
 const { renderToString } = require('react-dom/server')
 
 const server = http.createServer(express())
@@ -21,7 +22,7 @@ wss.on('connection', socket => {
         try {
             const { path, props } = JSON.parse(message)
 
-            const Component = require(`./example/${path}`).default
+            const Component = require(resolve(__dirname, 'example', path)).default
             const html = renderToString(Component(props))
 
             socket.send(JSON.stringify({ path, html }))
