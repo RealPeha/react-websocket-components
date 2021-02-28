@@ -11,11 +11,13 @@ const App = () => {
 
     return (
         <div>
-            <Counter value={count} />
+            <Counter value={count}>
+                <b>Children Value:</b> {count}
+            </Counter>
             <button onClick={() => setCount(c => c + 1)}>Increase</button>
             <button onClick={() => setCount(c => c - 1)}>Decrease</button>
             <Editor />
-            <Test heading="Text" isVisible={isVisible}/>
+            <Test heading="Text" isVisible={isVisible} />
             <button onClick={() => setVisible(v => !v)}>Toggle</button>
         </div>
     )
