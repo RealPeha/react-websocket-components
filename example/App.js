@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import { importServerComponent } from '../lib'
 
 import Editor from './components/client/Editor'
-const Article = importServerComponent('./components/server/Article') // import Article from './Article'
-const Counter = importServerComponent('./components/server/Counter')  // import Counter from './Counter'
+const Article = importServerComponent('./components/server/Article') // import Article from './components/server/Article'
+const Counter = importServerComponent('./components/server/Counter')  // import Counter from './components/server/Counter'
+
+const Test = () => {
+    const [v, setV] = useState(1)
+
+    return <b onClick={() => setV(Math.random())}>Click: {v}</b>
+}
 
 const App = () => {
     const [count, setCount] = useState(42)
@@ -18,6 +24,8 @@ const App = () => {
             <div>
                 <Counter value={count}>
                     <b>Children Value:</b> {count}
+
+                    <Test />
                 </Counter>
                 <button onClick={() => setCount(c => c + 1)}>Increase</button>
                 <button onClick={() => setCount(c => c - 1)}>Decrease</button>

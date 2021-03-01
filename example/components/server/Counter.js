@@ -13,16 +13,15 @@ const Counter = React.memo(({ value, children }) => {
             <div>
                 <b>Value: </b> {value}
                 <div>
-                    {children}
                 </div>
 
                 <ClientComponent count={42}>
                     <b>child</b>
                 </ClientComponent>
-
                 <Test />
             </div>
             <b>Da</b>
+                    {children}
         </>
     )
 })

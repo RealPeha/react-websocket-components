@@ -7,7 +7,7 @@ const express = require('express')
 const http = require('http')
 const { resolve } = require('path')
 const { createElement } = require('react')
-const { serializeReactElement, deserializeChildren } = require('./lib')
+const { serializeReactElement, Tags } = require('./lib')
 
 const server = http.createServer(express())
 
@@ -21,15 +21,14 @@ const wss = new WebSocket.Server({
 wss.on('connection', socket => {
     socket.on('message', message => {
         try {
-            const { path, props, children } = JSON.parse(message)
+            const { path, props } = JSON.parse(message)
 
             const Component = require(resolve(__dirname, 'example', path)).default
 
-            const element = createElement(Component, props, deserializeChildren(children))
+            const element = createElement(Component, props, Tags.CHILDREN)
 
             socket.send(JSON.stringify({
                 path,
-                props,
                 element: serializeReactElement(element)
             }))
         } catch (err) {
