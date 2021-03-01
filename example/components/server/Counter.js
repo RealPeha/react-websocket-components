@@ -1,27 +1,30 @@
 import React from 'react'
 import { importClientComponent } from '../../../lib'
 
-const ClientComponent = importClientComponent('./ClientCounter') // import ClientComponent from './ClientComponent'
+const ClientComponent = importClientComponent('./components/client/ClientCounter') // import ClientComponent from '../client/ClientComponent'
 
 const Test = () => {
     return <b>Server Component in Server Component</b>
 }
 
-const Counter = ({ value, children }) => {
+const Counter = React.memo(({ value, children }) => {
     return (
-        <div>
-            <b>Value: </b> {value}
+        <>
             <div>
-                {children}
+                <b>Value: </b> {value}
+                <div>
+                    {children}
+                </div>
+
+                <ClientComponent count={42}>
+                    <b>child</b>
+                </ClientComponent>
+
+                <Test />
             </div>
-
-            <ClientComponent count={42}>
-                <b>11</b>
-            </ClientComponent>
-
-            <Test />
-        </div>
+            <b>Da</b>
+        </>
     )
-}
+})
 
 export default Counter
