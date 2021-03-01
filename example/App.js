@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { importWSComponent } from '../lib'
+import { importServerComponent } from '../lib'
 
 import Editor from './Editor'
-const Test = importWSComponent('./Test') // import Test from './Test'
-const Counter = importWSComponent('./Counter')  // import Counter from './Counter'
+const Test = importServerComponent('./Test') // import Test from './Test'
+const Counter = importServerComponent('./Counter')  // import Counter from './Counter'
 
 const App = () => {
     const [isVisible, setVisible] = useState(true)

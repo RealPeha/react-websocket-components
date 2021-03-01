@@ -5,7 +5,7 @@ const Test = ({
     heading,
 }) => {
     if (!isVisible) {
-        return
+        return null
     }
 
     return (

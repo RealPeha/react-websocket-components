@@ -18,7 +18,7 @@ ws.onmessage = message => {
     const callback = ws.componentsMap.get(data.path)
 
     if (callback) {
-        callback(data.html)
+        callback(data)
     }
 }
 
