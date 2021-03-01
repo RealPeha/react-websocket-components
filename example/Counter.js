@@ -1,6 +1,9 @@
 import React from 'react'
+import { importClientComponent } from '../lib'
 
-const Test = () => {
+const ClientComponent = importClientComponent('./ClientCounter') // import ClientComponent from './ClientComponent'
+
+const ServerInServer = () => {
     return <b>Server Component in Server Component</b>
 }
 
@@ -12,8 +15,12 @@ const Counter = ({ value, children }) => {
                 <div>
                     {children}
                 </div>
+
+                <ClientComponent count={42}>
+                    <b>11</b>
+                </ClientComponent>
             </div>
-            <Test />
+            <ServerInServer />
         </>
     )
 }

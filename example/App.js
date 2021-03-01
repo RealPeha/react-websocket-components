@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { importServerComponent } from '../lib'
+import { importClientComponent, importServerComponent } from '../lib'
 
 import Editor from './Editor'
 const Test = importServerComponent('./Test') // import Test from './Test'
