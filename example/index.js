@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './style.css'
+
 import { WebSocketProvider, WaitWebSocketOpen } from '../lib'
 
 import App from './App'
@@ -24,7 +26,7 @@ ws.onmessage = message => {
 
 ReactDOM.render(
     <WebSocketProvider value={ws}>
-        <WaitWebSocketOpen>
+        <WaitWebSocketOpen fallback={<h1>Loading...</h1>}>
             <App />
         </WaitWebSocketOpen>
     </WebSocketProvider>,

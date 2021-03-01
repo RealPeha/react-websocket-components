@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Test = ({
+const Article = ({
     isVisible = true,
     heading,
 }) => {
@@ -17,4 +17,4 @@ const Test = ({
     )
 }
 
-export default Test
+export default Article

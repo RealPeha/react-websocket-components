@@ -1,24 +1,32 @@
 import React, { useState } from 'react'
-import { importClientComponent, importServerComponent } from '../lib'
+import { importServerComponent } from '../lib'
 
-import Editor from './Editor'
-const Test = importServerComponent('./Test') // import Test from './Test'
-const Counter = importServerComponent('./Counter')  // import Counter from './Counter'
+import Editor from './components/client/Editor'
+const Article = importServerComponent('./components/server/Article') // import Article from './Article'
+const Counter = importServerComponent('./components/server/Counter')  // import Counter from './Counter'
 
 const App = () => {
-    const [isVisible, setVisible] = useState(true)
     const [count, setCount] = useState(42)
+    const [isVisible, setVisible] = useState(true)
 
     return (
         <div>
-            <Counter value={count}>
-                <b>Children Value:</b> {count}
-            </Counter>
-            <button onClick={() => setCount(c => c + 1)}>Increase</button>
-            <button onClick={() => setCount(c => c - 1)}>Decrease</button>
+            <h3>Server Component with props</h3>
             <Editor />
-            <Test heading="Text" isVisible={isVisible} />
-            <button onClick={() => setVisible(v => !v)}>Toggle</button>
+
+            <h3>Server Component with Client Component</h3>
+            <div>
+                <Counter value={count}>
+                    <b>Children Value:</b> {count}
+                </Counter>
+                <button onClick={() => setCount(c => c + 1)}>Increase</button>
+                <button onClick={() => setCount(c => c - 1)}>Decrease</button>
+            </div>
+
+            <div>
+                <Article heading="Hello" isVisible={isVisible} />
+                <button onClick={() => setVisible(v => !v)}>Toggle</button>
+            </div>
         </div>
     )
 }

@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { importServerComponent } from '../lib'
+import { importServerComponent } from '../../../lib'
 
-import './style.css'
-
-const Markdown = importServerComponent('./Markdown') // import Markdown from './Markdown'
+const Markdown = importServerComponent('./components/server/Markdown') // import Markdown from '../server/Markdown'
 
 const Editor = () => {
     const [text, setText] = useState('<b>Yes</b> **No** [Link](google.com)')
