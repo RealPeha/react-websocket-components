@@ -1,6 +1,4 @@
-require('@babel/register')({
-    presets: ['@babel/preset-env', '@babel/preset-react'],
-})
+require('@babel/register')()
 
 const WebSocket = require('ws')
 const { resolve } = require('path')

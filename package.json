@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"yarn front\" \"yarn server\"",
-    "front": "parcel index.html --no-source-maps",
+    "front": "webpack serve --mode development",
     "server": "nodemon ./server.js",
     "test": "ava test/test.js",
     "build": "parcel build index.html --no-source-maps"
@@ -18,12 +18,20 @@
     "ws": "^7.4.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.8",
     "@babel/preset-react": "^7.12.13",
     "@babel/register": "^7.13.8",
     "ava": "^3.15.0",
+    "babel-loader": "^8.2.2",
     "concurrently": "^6.0.0",
+    "css-loader": "^5.1.1",
+    "html-webpack-plugin": "^5.2.0",
     "nodemon": "^2.0.7",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
