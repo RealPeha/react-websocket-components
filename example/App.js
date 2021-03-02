@@ -3,12 +3,12 @@ import { importServerComponent } from '../lib'
 
 import Editor from './components/client/Editor'
 const Article = importServerComponent('./components/server/Article') // import Article from './components/server/Article'
-const Counter = importServerComponent('./components/server/Counter')  // import Counter from './components/server/Counter'
+const Counter = React.memo(importServerComponent('./components/server/Counter'))  // import Counter from './components/server/Counter'
 
 const Test = () => {
-    const [v, setV] = useState(1)
+    const [value, setValue] = useState(Math.random())
 
-    return <b onClick={() => setV(Math.random())}>Click: {v}</b>
+    return <button onClick={() => setValue(Math.random())}>Click: {value}</button>
 }
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
             <div>
                 <Counter value={count}>
                     <b>Children Value:</b> {count}
-
+                    <br />
                     <Test />
                 </Counter>
                 <button onClick={() => setCount(c => c + 1)}>Increase</button>

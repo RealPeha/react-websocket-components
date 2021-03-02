@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"yarn front\" \"yarn server\"",
     "front": "parcel index.html --no-source-maps",
-    "server": "node ./server.js",
+    "server": "nodemon ./server.js",
     "test": "ava test/test.js",
     "build": "parcel build index.html --no-source-maps"
   },

@@ -7,7 +7,7 @@ const Test = () => {
     return <b>Server Component in Server Component</b>
 }
 
-const Counter = React.memo(({ value, children }) => {
+const Counter = ({ children, value }) => {
     return (
         <>
             <div>
@@ -20,10 +20,11 @@ const Counter = React.memo(({ value, children }) => {
                 </ClientCounter>
                 <Test />
             </div>
-            <b>Da</b>
-                    {children}
+            <b>Da</b><br />
+            {children}
+            <br />
         </>
     )
-})
+}
 
 export default Counter
