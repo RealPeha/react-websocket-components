@@ -11,11 +11,8 @@
     "build": "parcel build index.html --no-source-maps"
   },
   "dependencies": {
-    "marked": "^2.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sanitize-html": "^2.3.2",
-    "ws": "^7.4.3"
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -27,11 +24,14 @@
     "concurrently": "^6.0.0",
     "css-loader": "^5.1.1",
     "html-webpack-plugin": "^5.2.0",
+    "marked": "^2.0.1",
     "nodemon": "^2.0.7",
     "parcel-bundler": "^1.12.4",
+    "sanitize-html": "^2.3.2",
     "style-loader": "^2.0.0",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "ws": "^7.4.3"
   }
 }
