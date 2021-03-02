@@ -1,4 +1,5 @@
 require('@babel/register')()
+require('@babel/polyfill')
 
 const WebSocket = require('ws')
 const { resolve } = require('path')
