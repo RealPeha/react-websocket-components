@@ -1,16 +1,20 @@
 {
   "name": "react-websocket-components",
   "version": "1.0.0",
-  "main": "index.js",
+  "source": "index.html",
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"yarn front\" \"yarn server\"",
     "front": "parcel index.html --no-source-maps",
     "server": "node ./server.js",
     "test": "ava test/test.js",
-    "build": "parcel build index.html --no-source-maps"
+    "build": "parcel build --no-source-maps"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "babel-plugin-transform-glob-import": "^1.0.1",
+    "components": "^0.1.0",
+    "example": "^0.0.0",
     "marked": "^2.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -24,6 +28,6 @@
     "ava": "^3.15.0",
     "concurrently": "^6.0.0",
     "nodemon": "^2.0.7",
-    "parcel-bundler": "^1.12.4"
+    "parcel": "^2.0.1"
   }
 }

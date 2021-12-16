@@ -8,7 +8,7 @@ const Counter = importServerComponent('./components/server/Counter')  // import 
 const Test = () => {
     const [v, setV] = useState(1)
 
-    return <b onClick={() => setV(Math.random())}>Click: {v}</b>
+    return <b onClick={() => setV(Math.random())}>(Click here): {v}</b>
 }
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
             </div>
 
             <div>
-                <Article heading="Hello" isVisible={isVisible} />
+                <Article fallback={<h1>Loading...</h1>} heading="Hello" isVisible={isVisible} />
                 <button onClick={() => setVisible(v => !v)}>Toggle</button>
             </div>
         </div>

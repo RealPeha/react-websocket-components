@@ -1,7 +1,7 @@
 import React from 'react'
 import { importClientComponent } from '../../../lib'
 
-const ClientCounter = importClientComponent('./components/client/ClientCounter') // import ClientComponent from '../client/ClientComponent'
+const ClientCounter = importClientComponent('ClientCounter') // import ClientComponent from '../client/ClientComponent'
 
 const Test = () => {
     return <b>Server Component in Server Component</b>
@@ -21,7 +21,7 @@ const Counter = React.memo(({ value, children }) => {
                 <Test />
             </div>
             <b>Da</b>
-                    {children}
+            {children}
         </>
     )
 })
