@@ -6,4 +6,4 @@
 - [x] Server Components inside Server Components
 - [x] Server Components inside Server Components as child
 - [x] Client Components inside Server Components as child
-- [ ] Client Components inside Server Components
+- [х] Client Components inside Server Components
